@@ -155,12 +155,8 @@ var iView = this.iView = new Class({
 	startDestroy: function(){
 		this.fireEvent('startDestroy');
 
-		EightBit.Mobile.Transitions.popOver(
-			'out',
-			this.container,
-			this.endDestroy.bind(this),
-			0
-		);
+		// Hmmm, what to do here!
+		this.endDestroy();
 	},
 
 	endDestroy: function(){
@@ -356,8 +352,7 @@ var Content = this.iView.Content = new Class({
 
 	initializeScroll: function(){
 		this.iscroll = new iScroll(this.scrollContainer, {
-			desktopCompatibility: true,
-			scrollbarColor: '#fff'
+			desktopCompatibility: true
 		});
 	},
 
