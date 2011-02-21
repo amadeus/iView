@@ -13,6 +13,7 @@ var Eg = this.Example = new Class({
 
 		this.view = new iView(data, view);
 		this.view.addEvent('cancel', this.view.startDestroy.bind(this.view));
+		this.view.displayComplete();
 	}
 
 });
@@ -51,20 +52,38 @@ Eg.extend({
 							data: 'labelExample'
 						},
 						{
-							type: iView.UnitList.Label,
-							data: 'labelWithNav'
-						},
-						{
 							type: iView.UnitList.LabelInput,
 							data: 'labelWithInput'
 						},
 						{
 							type: iView.UnitList.LabelValue,
 							data: 'labelWithValue'
-						},
+						}
+					]
+				}
+			]
+		},
+
+		device: {
+			titleBar: {
+				text: 'Devices',
+				leftButton: {
+					type: iView.TitleBar.Button,
+					options: {
+						action: 'back',
+						content: 'Examples'
+					}
+				}
+			},
+
+			content: [
+				{
+					type: iView.UnitList,
+					content: [
 						{
-							type: iView.UnitList.LabelValue,
-							data: 'labelWithValueNav'
+							type: iView.UnitList.Label,
+							data: 'devices',
+							map: true
 						}
 					]
 				}
@@ -85,11 +104,6 @@ Eg.extend({
 			label: 'A Simple Label'
 		},
 
-		labelWithNav: {
-			label: 'A Label w/Nav Arrow',
-			nav: true
-		},
-
 		labelWithInput: {
 			label: 'Input',
 			value: '',
@@ -98,13 +112,41 @@ Eg.extend({
 
 		labelWithValue: {
 			label: 'Device',
-			value: 'iPhone'
+			value: 'iPhone',
+			nav: true,
+			to: 'device'
 		},
 
-		labelWithValueNav: {
-			label: 'OS',
-			value: '4.2',
-			nav: true
+		devices: {
+			values: [
+				{
+					label: 'iPhone',
+					value: 'iphone',
+					display: 'iPhone'
+				},
+
+				{
+					label: 'iPhone 3G',
+					value: 'iphone3g',
+					display: 'iPhone 3G'
+				},
+
+				{
+					label: 'iPhone 3GS',
+					value: 'iphone3gs',
+					display: 'iPhone 3GS'
+				},
+
+				{
+					label: 'iPhone 4',
+					value: 'iphone4',
+					display: 'iPhone 4'
+				}
+			],
+			map: {
+				set: 'labelWithValue',
+				to: 'initial'
+			}
 		}
 	}
 

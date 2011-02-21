@@ -119,18 +119,19 @@ var iView = this.iView = new Class({
 
 		newElement = document.id(this.pages[page]);
 
-		EightBit.Mobile.Transitions.horizontalPrep(currentElement, newElement, direction);
+		iView.Transitions.Horizontal.prep(currentElement, newElement, direction);
+
 		newElement.inject(this.content);
 		this.pages[page].refresh();
 
-		EightBit.Mobile.Transitions.horizontal(
+		new iView.Transitions.Horizontal(
 			direction,
 			currentElement,
 			newElement,
-			this.transitionComplete.bind(this, page, currentPage, oldTitleBar),
-			200,
 			oldTitleBar,
-			this.titlebar.elements
+			this.titlebar.elements, {
+				onComplete: this.transitionComplete.bind(this, [page, currentPage, oldTitleBar])
+			}
 		);
 	},
 
@@ -296,6 +297,8 @@ var Button = this.iView.TitleBar.Button = new Class({
 				click: this.click.bind(this)
 			}
 		}).inject(container);
+
+		if (this.options.action === 'back') this.button.addClass('back');
 	},
 
 	click: function(){

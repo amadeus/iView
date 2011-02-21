@@ -54,7 +54,7 @@
 	position:absolute;
 	margin:0;
 	padding:0;
-	padding:0px 6px 0px;
+	padding:0px 5px 0px;
 	display:block;
 	background:transparent; /* url(images/); */
 	border-width:6px 6px 7px 6px;
@@ -80,6 +80,12 @@
 
 .iView .titlebar .css-button.left {
 	left:15px;
+}
+
+.iView .titlebar .css-button.back {
+	padding-left:3px;
+	border-width:7px 6px 7px 14px;
+	-webkit-border-image: url(images/titlebar-button-back.png) 14 12 14 28  stretch;
 }
 
 .iView .titlebar .css-button.right {
@@ -146,8 +152,13 @@
 	z-index:0;
 }
 
+.iView .unit-list li:first-of-type {
+	border-radius:10px 10px 0 0;
+}
+
 .iView .unit-list li:last-of-type {
 	border:none;
+	border-radius:0 0 10px 10px;
 }
 
 .unit-list li.nav {
