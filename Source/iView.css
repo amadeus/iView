@@ -1,5 +1,113 @@
+/* @override http://amadeus.local/Source/iView.css */
+
+.iView {
+	position:absolute;
+	overflow:hidden;
+	z-index:1;
+	top:0;
+	left:0;
+	width:100%;
+
+	background:url(bg.gif);
+	background-size:7px 1px;
+	
+	font:13px/1.4em Helvetica Neue, Helvetica, sans-serif;
+}
+
+.iView .titlebar {
+	position:absolute;
+	top:0;
+	right:-10px;
+	left:-10px;
+	z-index:1;
+
+	overflow:hidden;
+	padding:0 10px;
+	text-align:center;
+	height:44px;
+
+	background:#43374f url(images/titlebar-bg.png);
+	background-size:1px 44px;
+	color:#fff;
+}
+
+.iView .titlebar h1 {
+	position:absolute;
+	top:0;
+	margin:0;
+	left:95px;
+	right:95px;
+	font-size:18px;
+	line-height:44px;
+
+	text-shadow:0 -1px 0 #000;
+}
+
+.css-button {
+	position:absolute;
+	margin:0;
+	padding:0;
+	padding:0px 6px 0px;
+	display:block;
+	background:transparent; /* url(images/); */
+	border-width:6px 6px 7px 6px;
+	-webkit-border-image: url(images/titlebar-button.png) 12 12 14 12 repeat stretch;
+	
+	font-size:12px;
+	line-height:18px;
+	font-weight:bold;
+	color:#fff;
+	text-shadow:0 -1px 0 #000;
+	
+	-webkit-tap-highlight-color:transparent;
+}
+
+.iView .titlebar .css-button {
+	position:absolute;
+	top:7px;
+
+	max-width:80px;
+}
+
+.iView .titlebar .css-button.left {
+	left:15px;
+}
+
+.iView .titlebar .css-button.right {
+	right:17px;
+	background-color:#068400;
+}
+
+.iView .content {
+	position:absolute;
+	z-index:0;
+	overflow:hidden;
+	left:0;
+	width:100%;
+}
+
+.iView .content .iscroll {
+	min-height:100%;
+}
+
+.iView .content h2,
+.iView .content p {
+	margin:20px 20px -10px;
+	font-size:17px;
+	font-weight:bold;
+	color:#27212e;
+	text-shadow:0 1px 0 #fff;
+}
+
+.iView .content p {
+	font-size:14px;
+	margin:10px 20px;
+}
+
+
+
 .iscroll {
-	background:url(/static/images/iphone/iscroll-bg.gif);
+	background:url(bg.gif);
 	background-size:7px 1px;
 	color:#000;
 	font:bold 16px/1.5 Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -7,7 +115,7 @@
 }
 
 .iscroll .content {
-	background:url(/static/images/iphone/iscroll-bg.gif);
+	background:url(bg.gif);
 	background-size:7px 1px;
 }
 
@@ -104,19 +212,3 @@
 .unit-list li.highlight input {
 	color:#fff !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

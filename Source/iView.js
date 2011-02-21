@@ -27,7 +27,7 @@ var iView = this.iView = new Class({
 
 		containerStyles: {},
 
-		maxViewSize: { x: 320, y: 460 },
+		maxViewSize: { x: Infinity, y: Infinity },
 
 		previousPage: 'initial'
 	},
